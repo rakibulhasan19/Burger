@@ -1,41 +1,42 @@
 import React, { Component } from 'react';
-import './BurgerIngradient.css'
-import PropTypes from 'prop-types';
-class burgerIngradient extends Component{
+import PropTypes from 'prop-types'
+import "./BurgerIngradient.css"
+class BurgerIngradient extends Component{
     render(){
-    let ingradient = null;
+        let ingradient = null;
     switch(this.props.type){
-        case ('bread-bottom'):
-            ingradient = <div className="BreadBottom"></div>;
+        case('bread-bottom'):
+        ingradient = <div className="BreadBottom"></div>;
+        break;
+        case('bread-top'):
+        ingradient = (
+        <div className="BreadTop">
+            <div className="Seeds1"></div>
+            <div className="Seeds2"></div>
+        </div>
+        )
+        break;
+        case('meat'):
+            ingradient = <div className="Meat"></div>
             break;
-        case ('bread-top'):
-            ingradient = (
-                <div className="BreadTop">
-                    <div className="Seeds1"></div>
-                    <div className="Seeds2"></div>
-                </div>
-            );
+        case('cheese'):
+            ingradient = <div className="Cheese"></div>
             break;
-        case ('meat'):
-            ingradient = <div className="Meat"></div>;
+        case('bacon'):
+            ingradient = <div className="Bacon"></div>
             break;
-        case ('cheese'):
-        ingradient = <div className="Cheese"></div>;
-            break;
-        case ('bacon'):
-        ingradient = <div className="Bacon"></div>;
-            break;
-        case ('salad'):
-        ingradient = <div className="Salad"></div>;
+        case('salad'):
+            ingradient = <div className="Salad"></div>
             break;
         default:
-            ingradient = null;
-
+            ingradient = null; 
     }
     return ingradient;
+
+    
     }
-}
-burgerIngradient.propTypes ={
+};
+BurgerIngradient.propTypes={
     type:PropTypes.string.isRequired 
 }
-export default burgerIngradient;
+export default BurgerIngradient;

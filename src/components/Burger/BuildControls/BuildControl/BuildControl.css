@@ -1,22 +1,20 @@
-.BuildControl {
-    display: flex;
+.BuildControl{
+    display:flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 5px 0;
-}
+    align-items: center;;
+    margin:5px 0;
 
-.BuildControl button {
+}
+.BuildControl button{
     display: block;
-    font: inherit;
-    padding: 5px;
-    margin: 0 5px;
+    font:inherit;
+    padding:5px;
+    margin:0 5px;
     width: 80px;
-    border: 1px solid #AA6817;
+    border:1px solid #AA6817;
     cursor: pointer;
-    outline: none;
+    outline:none;
 }
-
-
 .BuildControl button:disabled {
     background-color: #AC9980;
     border: 1px solid #7E7365;

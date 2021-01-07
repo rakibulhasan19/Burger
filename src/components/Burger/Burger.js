@@ -1,27 +1,24 @@
 import React from 'react';
-import './Burger.css'
+import "./Burger.css"
 import BurgerIngradient from './BurgerIngradient/BurgerIngradient'
+const Burger =(props)=>{
+    let tranfromIngradient = Object.keys(props.ingradient).map(igKey=>{
+        return[...Array(props.ingradient[igKey])].map((_,i)=>{
+            return <BurgerIngradient key={igKey+i} type={igKey}/>
 
-const Burger = (props)=>{
-    let transfromIngradient = Object.keys(props.ingradients)
-    .map( igKey => {
-        return [...Array( props.ingradients[igKey] )].map( ( _, i ) => {
-            return <BurgerIngradient key={igKey + i} type={igKey} />;
-        } );
-    } )
-    .reduce((arr, el) => {
+        })
+    }).reduce((arr,el)=>{
         return arr.concat(el)
-    }, []);
-    if(transfromIngradient.length === 0){
-        transfromIngradient = <p>Please start adding ingradients!</p>
+    },[]);
+    if(tranfromIngradient.length === 0){
+        tranfromIngradient = <p>Please start adding ingradient!</p>;
     }
     return(
         <div className="Burger">
             <BurgerIngradient type="bread-top"/>
-            {transfromIngradient}
+            {tranfromIngradient}
             <BurgerIngradient type="bread-bottom"/>
-
         </div>
-    );
+    )
 }
-export default Burger; 
+export default Burger;
